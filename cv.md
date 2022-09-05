@@ -86,3 +86,205 @@ That jobs getted me skils like:
 * Сommunication skills - at some jobs I was the organizer of corporate parties
 * Responsibility - at some jobs I works with moneys and goods handlings
 * Smilingness and friendship - McDonnalds and Cinema Group gots me a lot positive feelings and skills.
+
+## _Code examples_ + *Experience*
+### MyHelloWorld
+#### _1_
+ In my main project you can see much of my code.
+ \
+ Interesting here is Object model of Coin and custom methods.
+ \
+ **BUT MY PROJECT WAITS MY LVLup**
+ \
+ *And this work will need a little cleaned up*
+ \
+ https://github.com/RKeyIT/MyHelloWorld
+ ```
+ class Coin {        // Class and after this functions for this class
+    constructor(){
+        this.date = new Date();
+    }
+    take(){
+        this.amount = Number(document.getElementById('add').value),
+        this.comment = document.getElementById('addedFrom').value,
+        this.color = 'green';
+        MONEYS.push(coin)
+    }
+    spend(){
+        this.amount = Number(document.getElementById("less").value),
+        this.comment = document.getElementById('losedFor').value,
+        this.color = 'red';
+        MONEYS.push(coin)
+    }
+    save(){
+        this.amount = Number(document.getElementById('save').value),
+        this.comment = document.getElementById('saveFor').value,
+        this.color = 'blue';
+        MONEYS.push(coin)
+    }
+}
+
+//Operative functions with this class
+    function takeCoin() {
+        if (document.getElementById('add').value <= 0) {return}
+        else {
+        coin = new Coin()
+        coin.take();
+        calculateCurrentMoneys();
+        spendPerDay();
+        document.getElementById('add').value = '';
+        document.getElementById('addedFrom').value = '';
+        }
+    }
+    function spendCoin() {
+        if (document.getElementById('less').value <= 0) {return}
+        else {
+        coin = new Coin ()
+        coin.spend();
+        calculateCurrentMoneys();
+        spendPerDay();
+        document.getElementById('less').value = '';
+        document.getElementById('losedFor').value = '';
+        }
+    }
+    function saveCoin() {
+        if (document.getElementById('save').value <= 0) {return}
+        else {
+        coin = new Coin ()
+        coin.save();
+        calculateCurrentMoneys();
+        spendPerDay();
+        document.getElementById('save').value = '';
+        document.getElementById('saveFor').value = '';
+        }
+    }
+ ```
+### Algorithm practice
+#### _2_
+That was my first try to "**Selection sort**"
+\
+https://github.com/RKeyIT/AlgorithmPractice/blob/main/3.SortAlgorithms/2.%20MyTry/script.js
+```
+let oBig = 0;
+sortArr(arr);
+function sortArr(arr) {
+    if (arr.length <= 1) return arr;
+    for (i = 0; i < arr.length; i++) {
+        oBig++
+        if (arr[i] == arr[i + 1]) {
+            continue;
+        }
+        if (arr[i] > arr[i + 1]) {
+            let indx = arr[i + 1];
+            arr[i + 1] = arr[i];
+            arr[i] = indx;
+            i = 0;
+        }
+        if (arr[i] < arr[i - 1]) {
+            let indx = arr[i - 1];
+            arr[i - 1] = arr[i];
+            arr[i] = indx;
+        }
+    }
+    console.log('oBig = +- O\(n*n\) = ' + oBig)   // 97001
+    return arr;
+}
+```
+Interesting here what my algorithm some times gots result less than O(n**2)
+\
+That's bounded different array fillings
+
+#### _3_
+**Convert any number to binary**
+
+```
+function convToBinary(num) {
+    //   debugger
+    // argument
+    // next string was used like another debug mod 
+    var trueResult = num.toString(2);
+    // result array
+    var arr = [];
+    // doubled variable
+    var dbl = 1;
+
+    //if number equals negative
+    if (num < 0 || typeof num != "number") {
+        return Error("Invalid value");
+    }
+
+    // if number equals 0 or 1
+    if (num == 0 || num == 1) {
+        return "" + num;
+    }
+
+    // double dbl variable for search
+    // firrst higher value then entered
+    while (dbl < num) dbl *= 2;
+
+    // general loop
+    while (dbl > 0 && num > 0) {
+        if (num === dbl) {
+            let degree = 0;
+            while (num != 2 ** degree) {
+                degree++;
+            }
+            arr.push("1");
+            num -= num;
+            dbl -= dbl;
+            while (degree >= 1) {
+                arr.push("0");
+                degree--;
+            }
+        }
+
+        if (num == 0 && dbl > 0) {
+            arr.push("0");
+            break;
+        }
+        if (dbl == 1) {
+            arr.push("1");
+            --dbl;
+            break;
+        }
+        if (dbl > num) {
+            arr.push("0");
+            dbl /= 2;
+        }
+        if (dbl < num) {
+            arr.push("1");
+            num -= dbl;
+            dbl /= 2;
+        }
+    }
+    if (arr[0] == 0) {
+        arr.reverse();
+        arr.length = arr.length - 1;
+        arr.reverse();
+    }
+    if (trueResult != arr.join("")) {
+        return Error("ERROR! Values result did not equals");
+    }
+    return (arr = arr.join(""));
+}
+
+convToBinary(3);
+```
+
+## Education
+
+### 1
+**JS (Eng)**
+#### Course
+https://stepik.org/course/3432
+##### Certificate
+https://stepik.org/cert/1583723
+![JS_Certificate](assets/img/js.png)
+
+### 2
+**HTML/CSS**
+#### Course
+https://stepik.org/course/38218
+##### Certificate
+https://stepik.org/cert/1601257
+![HTML+CSS_Certificate](assets/img/html_css.png)
