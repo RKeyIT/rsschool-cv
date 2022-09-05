@@ -1,5 +1,5 @@
 # Raman Krytski
-![MyPhoto](assets/img/photo.jpg)
+![MyPhoto](assets/img/myPhoto.jpg)
 
 ## _contact_
 
